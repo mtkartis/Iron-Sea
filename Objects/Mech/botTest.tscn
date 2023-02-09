@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Characters/Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/Interact/Interact.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/Mech/Mech.gd" type="Script" id=3]
+
+[node name="Node" type="Node"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -244, 78, 1726, 57, 1711, 114, 1684, 78, 1254, 80, 1218, 129, 1167, 84, 633, 97, 607, 116, 580, 88, 167, 97, 141, 137, 107, 97, -244, 101 )
+
+[node name="Mech" type="Node2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Mech"]
+mode = 1
+mass = 0.00102041
+gravity_scale = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Mech/RigidBody2D"]
+polygon = PoolVector2Array( 278, 184, 278, 376, 750, 380, 746, 184, 704, 320, 320, 320 )
+
+[node name="Steering" parent="Mech" instance=ExtResource( 2 )]
+
+[node name="CollisionPolygon2D" parent="Mech/Steering" index="0"]
+polygon = PoolVector2Array( 612, 242, 596, 280, 630, 298, 658, 276 )
+
+[node name="Tween" type="Tween" parent="Mech"]
+
+[node name="Player" parent="Mech" instance=ExtResource( 1 )]
+position = Vector2( 518, 230 )
+
+[node name="Camera2D" type="Camera2D" parent="Mech/Player"]
+position = Vector2( 2, -4 )
+current = true
+
+[connection signal="activate" from="Mech/Steering" to="Mech" method="_on_activate"]
+
+[editable path="Mech/Steering"]

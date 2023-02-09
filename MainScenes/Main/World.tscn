@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Characters/Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Characters/Enemies/Enemy.gd" type="Script" id=2]
+[ext_resource path="res://Objects/City/City.tscn" type="PackedScene" id=3]
+[ext_resource path="res://MainScenes/Main/Cities.gd" type="Script" id=4]
+[ext_resource path="res://Objects/Mech/Mech.tscn" type="PackedScene" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="World" type="Node"]
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Background" type="CanvasLayer" parent="."]
+
+[node name="RigidBody2D" parent="." instance=ExtResource( 5 )]
+position = Vector2( 304, -136 )
+
+[node name="Player" parent="RigidBody2D" instance=ExtResource( 1 )]
+position = Vector2( -8, -80 )
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Enemies"]
+position = Vector2( 440, -320 )
+collision_layer = 8
+collision_mask = 2
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Area2D"]
+shape = SubResource( 1 )
+
+[node name="Cities" type="Node" parent="."]
+script = ExtResource( 4 )
+
+[node name="City1" parent="Cities" instance=ExtResource( 3 )]
+
+[node name="City2" parent="Cities" instance=ExtResource( 3 )]
+position = Vector2( 1024, 0 )
+
+[editable path="RigidBody2D"]
+[editable path="RigidBody2D/Steering"]

@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://MainScenes/MapScreen/MapScreen.gd" type="Script" id=1]
+[ext_resource path="res://MainScenes/MapScreen/Infographics/MapHUD.tscn" type="PackedScene" id=2]
+[ext_resource path="res://MainScenes/MapScreen/Generator/MapDataGenerator.gd" type="Script" id=3]
+
+[node name="MapScreen" type="Node"]
+script = ExtResource( 1 )
+map_data_generator = ExtResource( 3 )
+
+[node name="Topography" type="Node" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_left = 96.0
+margin_top = 144.0
+margin_right = 944.0
+margin_bottom = 864.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_right = 848.0
+margin_bottom = 720.0
+custom_constants/separation = 0
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/VBoxContainer"]
+self_modulate = Color( 1, 1, 1, 0.290196 )
+margin_right = 848.0
+margin_bottom = 656.0
+size_flags_vertical = 11
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MapHUD" parent="MarginContainer/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 656.0
+margin_right = 848.0
+margin_bottom = 720.0

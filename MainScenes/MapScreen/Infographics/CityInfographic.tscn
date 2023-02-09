@@ -1,0 +1,103 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://MainScenes/MapScreen/Infographics/CityInfographic.gd" type="Script" id=1]
+
+[node name="CityInfographic" type="MarginContainer"]
+margin_right = 100.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 100.0
+margin_bottom = 100.0
+
+[node name="List" type="VBoxContainer" parent="."]
+margin_right = 100.0
+margin_bottom = 100.0
+
+[node name="City" type="Label" parent="List"]
+margin_left = 30.0
+margin_right = 69.0
+margin_bottom = 14.0
+size_flags_horizontal = 4
+text = "CITY 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Coal" type="HBoxContainer" parent="List"]
+margin_left = 10.0
+margin_top = 18.0
+margin_right = 89.0
+margin_bottom = 38.0
+size_flags_horizontal = 4
+
+[node name="Button" type="Button" parent="List/Coal"]
+margin_right = 47.0
+margin_bottom = 20.0
+action_mode = 0
+text = "COAL"
+
+[node name="Label" type="Label" parent="List/Coal"]
+margin_left = 51.0
+margin_top = 3.0
+margin_right = 79.0
+margin_bottom = 17.0
+text = " $$$"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Scrap" type="HBoxContainer" parent="List"]
+margin_left = 8.0
+margin_top = 42.0
+margin_right = 92.0
+margin_bottom = 62.0
+size_flags_horizontal = 4
+
+[node name="Button" type="Button" parent="List/Scrap"]
+margin_right = 52.0
+margin_bottom = 20.0
+action_mode = 0
+text = "SCRAP"
+
+[node name="Label" type="Label" parent="List/Scrap"]
+margin_left = 56.0
+margin_top = 3.0
+margin_right = 84.0
+margin_bottom = 17.0
+text = " $$$"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ammo" type="HBoxContainer" parent="List"]
+margin_left = 6.0
+margin_top = 66.0
+margin_right = 94.0
+margin_bottom = 86.0
+size_flags_horizontal = 4
+
+[node name="Button" type="Button" parent="List/Ammo"]
+margin_right = 56.0
+margin_bottom = 20.0
+action_mode = 0
+text = "AMMO"
+
+[node name="Label" type="Label" parent="List/Ammo"]
+margin_left = 60.0
+margin_top = 3.0
+margin_right = 88.0
+margin_bottom = 17.0
+text = " $$$"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="List/Coal/Button" to="." method="_on_Button_pressed" binds= [ "coal" ]]
+[connection signal="pressed" from="List/Scrap/Button" to="." method="_on_Button_pressed" binds= [ "scrap" ]]
+[connection signal="pressed" from="List/Ammo/Button" to="." method="_on_Button_pressed" binds= [ "ammo" ]]

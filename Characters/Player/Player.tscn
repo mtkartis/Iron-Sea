@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Characters/Player/Player.gd" type="Script" id=1]
+[ext_resource path="res://Graphics/icon.png" type="Texture" id=2]
+[ext_resource path="res://Characters/Player/Pointer/Pointer.tscn" type="PackedScene" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+
+[node name="Player" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 9
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 24 )
+shape = SubResource( 1 )
+
+[node name="Pointer" parent="." instance=ExtResource( 3 )]
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+enabled = true
+collision_mask = 0
+collide_with_areas = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true

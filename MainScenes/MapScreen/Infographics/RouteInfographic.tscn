@@ -1,0 +1,117 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://MainScenes/MapScreen/Infographics/RouteInfographic.gd" type="Script" id=1]
+
+[node name="RouteInfographic" type="MarginContainer"]
+margin_right = 150.0
+margin_bottom = 220.0
+rect_min_size = Vector2( 150, 250 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 150.0
+margin_bottom = 250.0
+
+[node name="RoughLayout" type="VBoxContainer" parent="."]
+margin_right = 150.0
+margin_bottom = 250.0
+
+[node name="CityLabels" type="HBoxContainer" parent="RoughLayout"]
+margin_right = 150.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 0, 32 )
+size_flags_vertical = 9
+
+[node name="City1" type="Label" parent="RoughLayout/CityLabels"]
+margin_left = 13.0
+margin_top = 9.0
+margin_right = 49.0
+margin_bottom = 23.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "City 1"
+
+[node name="ColorRect" type="ColorRect" parent="RoughLayout/CityLabels"]
+margin_left = 67.0
+margin_top = 8.0
+margin_right = 82.0
+margin_bottom = 23.0
+rect_min_size = Vector2( 15, 15 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="City2" type="Label" parent="RoughLayout/CityLabels"]
+margin_left = 100.0
+margin_top = 9.0
+margin_right = 136.0
+margin_bottom = 23.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "City 2"
+
+[node name="MissionInfo" type="VBoxContainer" parent="RoughLayout"]
+margin_top = 36.0
+margin_right = 150.0
+margin_bottom = 112.0
+custom_constants/separation = 8
+
+[node name="MissionTitle" type="Label" parent="RoughLayout/MissionInfo"]
+margin_left = 46.0
+margin_right = 103.0
+margin_bottom = 14.0
+size_flags_horizontal = 6
+size_flags_vertical = 8
+text = "MISSION"
+
+[node name="RewardDisplay" type="HBoxContainer" parent="RoughLayout/MissionInfo"]
+margin_left = 30.0
+margin_top = 22.0
+margin_right = 120.0
+margin_bottom = 36.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="RewardLabel" type="Label" parent="RoughLayout/MissionInfo/RewardDisplay"]
+margin_right = 62.0
+margin_bottom = 14.0
+size_flags_horizontal = 6
+size_flags_vertical = 8
+text = "Reward: $"
+
+[node name="RewardMoney" type="Label" parent="RoughLayout/MissionInfo/RewardDisplay"]
+margin_left = 66.0
+margin_right = 90.0
+margin_bottom = 14.0
+size_flags_horizontal = 6
+size_flags_vertical = 8
+text = "XXX"
+
+[node name="MissionIcons" type="HSplitContainer" parent="RoughLayout/MissionInfo"]
+margin_top = 44.0
+margin_right = 150.0
+margin_bottom = 76.0
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="RoughLayout/MissionInfo/MissionIcons"]
+margin_left = 14.0
+margin_right = 46.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="Description" type="Label" parent="RoughLayout/MissionInfo/MissionIcons"]
+margin_left = 72.0
+margin_top = 1.0
+margin_right = 150.0
+margin_bottom = 32.0
+size_flags_horizontal = 6
+size_flags_vertical = 8
+text = "Description:
+"

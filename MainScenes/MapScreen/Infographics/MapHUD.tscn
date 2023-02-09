@@ -1,0 +1,82 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://MainScenes/MapScreen/Infographics/MapHUD.gd" type="Script" id=1]
+
+[node name="MapHUD" type="HBoxContainer"]
+rect_min_size = Vector2( 0, 64 )
+size_flags_vertical = 9
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wallet" type="HBoxContainer" parent="."]
+margin_right = 74.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Wallet"]
+margin_top = 25.0
+margin_right = 70.0
+margin_bottom = 39.0
+text = "WALLET:  $"
+
+[node name="Amount" type="Label" parent="Wallet"]
+margin_left = 74.0
+margin_top = 25.0
+margin_right = 74.0
+margin_bottom = 39.0
+
+[node name="Coal" type="HBoxContainer" parent="."]
+margin_left = 78.0
+margin_right = 125.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Coal"]
+margin_top = 25.0
+margin_right = 43.0
+margin_bottom = 39.0
+text = "COAL: "
+
+[node name="Amount" type="Label" parent="Coal"]
+margin_left = 47.0
+margin_top = 25.0
+margin_right = 47.0
+margin_bottom = 39.0
+
+[node name="Scrap" type="HBoxContainer" parent="."]
+margin_left = 129.0
+margin_right = 181.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Scrap"]
+margin_top = 25.0
+margin_right = 48.0
+margin_bottom = 39.0
+text = "SCRAP: "
+
+[node name="Amount" type="Label" parent="Scrap"]
+margin_left = 52.0
+margin_top = 25.0
+margin_right = 52.0
+margin_bottom = 39.0
+
+[node name="Ammo" type="HBoxContainer" parent="."]
+margin_left = 185.0
+margin_right = 241.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Ammo"]
+margin_top = 25.0
+margin_right = 52.0
+margin_bottom = 39.0
+text = "AMMO: "
+
+[node name="Amount" type="Label" parent="Ammo"]
+margin_left = 56.0
+margin_top = 25.0
+margin_right = 56.0
+margin_bottom = 39.0
